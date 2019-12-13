@@ -1,5 +1,11 @@
+const lengthOp = document.getElementById('length');
+const numbersOp = document.getElementById('numbers');
+const uppercaseOp = document.getElementById('uppercase');
+const lowercaseOp = document.getElementById('lowercase');
+const charactersOp = document.getElementById('characters');
+const generateBtn = document.getElementById('generateBtn');
 const result = document.getElementById('result');
-const copyBtn = document.getElementById('copyBtn');
+const copyBtn = document.getElementById('copyBtn'); 
 
 // Copy to clipboard function
 
