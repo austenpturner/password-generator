@@ -1,3 +1,5 @@
+// DOM variables
+
 const lengthInput = document.getElementById('length');
 const numbersCheckbox = document.getElementById('numbers');
 const uppercaseCheckbox = document.getElementById('uppercase');
@@ -6,6 +8,13 @@ const charactersCheckbox = document.getElementById('characters');
 const generateBtn = document.getElementById('generateBtn');
 const result = document.getElementById('result');
 const copyBtn = document.getElementById('copyBtn');
+
+// Character variables
+
+const numbers = "0123456789";
+const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+const symbols = "@%+\/'!#$^?:,({[)}]~-_.";
 
 // Copy to clipboard function
 
@@ -16,42 +25,25 @@ copyBtn.onclick = function() {
 
 // Random character functions
 
-function getRandomNumber() {
-    let number = Math.floor(Math.random() * 10);
-    return number;
-}
-
-function getRandomUppercase() {
-    const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let uppercase = uppercaseLetters[(Math.floor(Math.random() * uppercaseLetters.length))];
-    return uppercase;
-}
-
-function getRandomLowercase() {
-    const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
-    let lowercase = lowercaseLetters[(Math.floor(Math.random() * lowercaseLetters.length))];
-    return lowercase;
-}
-
-function getRandomSpecial() {
-    const characters = "@%+\/'!#$^?:,({[)}]~-_.";
-    let character = characters[(Math.floor(Math.random() * characters.length))];
-    return character;
+function getRandomItem(type) {
+    let items = type;
+    let item = items[(Math.floor(Math.random() * items.length))];
+    return item;
 }
 
 function getRandomCharacter() { 
     let items = [];
     if (numbersCheckbox.checked) {
-        items += getRandomNumber();
-    }
-    if (lowercaseCheckbox.checked) {
-        items += getRandomUppercase();
+        items += getRandomItem(numbers);
     }
     if (uppercaseCheckbox.checked) {
-        items += getRandomLowercase();
+        items += getRandomItem(uppercaseLetters);
+    }
+    if (lowercaseCheckbox.checked) {
+        items += getRandomItem(lowercaseLetters);
     }
     if (charactersCheckbox.checked) {
-        items += getRandomSpecial();
+        items += getRandomItem(symbols);
     }
     if (items.length === 0) {
         return '';
