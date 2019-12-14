@@ -9,41 +9,36 @@ const generateBtn = document.getElementById('generateBtn');
 const result = document.getElementById('result');
 const copyBtn = document.getElementById('copyBtn');
 
-// Character variables
+// Character strings
 
 const numbers = "0123456789";
 const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 const symbols = "@%+\/'!#$^?:,({[)}]~-_.";
 
-// Copy to clipboard function
+// Generate random character function
 
-copyBtn.onclick = function() {
-    result.select();
-    document.execCommand('Copy');
-}
-
-// Random character functions
-
-function getRandomItem(type) {
+function getRandomCharacter(type) {
     let items = type;
     let item = items[(Math.floor(Math.random() * items.length))];
     return item;
 }
 
-function getRandomCharacter() { 
+// Add character to password function
+
+function addPasswordCharacter() { 
     let items = [];
     if (numbersCheckbox.checked) {
-        items += getRandomItem(numbers);
+        items += getRandomCharacter(numbers);
     }
     if (uppercaseCheckbox.checked) {
-        items += getRandomItem(uppercaseLetters);
+        items += getRandomCharacter(uppercaseLetters);
     }
     if (lowercaseCheckbox.checked) {
-        items += getRandomItem(lowercaseLetters);
+        items += getRandomCharacter(lowercaseLetters);
     }
     if (charactersCheckbox.checked) {
-        items += getRandomItem(symbols);
+        items += getRandomCharacter(symbols);
     }
     if (items.length === 0) {
         return '';
@@ -52,14 +47,14 @@ function getRandomCharacter() {
     return item;
 }
 
-// Password function
+// PGenerate password function
 
 function generatePassword() {
     result.value = '';
     const length = parseInt(lengthInput.value);
     var password = '';
     for (var i = 0; i < length; i++) {
-        password += getRandomCharacter();
+        password += addPasswordCharacter();
     }
     result.value = password;
 }
@@ -69,3 +64,10 @@ function generatePassword() {
 generateBtn.addEventListener('click', () => {
     generatePassword();
 })
+
+// Copy to clipboard function
+
+copyBtn.onclick = function() {
+    result.select();
+    document.execCommand('Copy');
+}
