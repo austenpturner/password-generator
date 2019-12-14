@@ -16,7 +16,7 @@ const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 const symbols = "@%+\/'!#$^?:,({[)}]~-_.";
 
-// Generate random character function
+// Function to generate a random character from character strings
 
 function getRandomCharacter(type) {
     let items = type;
@@ -24,7 +24,7 @@ function getRandomCharacter(type) {
     return item;
 }
 
-// Add character to password function
+// Function to add a character to the password based on user's selected options
 
 function addPasswordCharacter() { 
     let items = [];
@@ -47,7 +47,7 @@ function addPasswordCharacter() {
     return item;
 }
 
-// PGenerate password function
+// Function to generate password and set password to result value
 
 function generatePassword() {
     result.value = '';
@@ -59,13 +59,13 @@ function generatePassword() {
     result.value = password;
 }
 
-// Generate button event listener
+// Event listener to generate password on "generate button" click
 
 generateBtn.addEventListener('click', () => {
     generatePassword();
 })
 
-// Copy to clipboard function
+// Function to copy password to clipboard
 
 copyBtn.onclick = function() {
     result.select();
