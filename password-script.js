@@ -1,8 +1,8 @@
-const lengthOp = document.getElementById('length');
-const numbersOp = document.getElementById('numbers');
-const uppercaseOp = document.getElementById('uppercase');
-const lowercaseOp = document.getElementById('lowercase');
-const charactersOp = document.getElementById('characters');
+const lengthInput = document.getElementById('length');
+const numbersCheckbox = document.getElementById('numbers');
+const uppercaseCheckbox = document.getElementById('uppercase');
+const lowercaseCheckbox = document.getElementById('lowercase');
+const charactersCheckbox = document.getElementById('characters');
 const generateBtn = document.getElementById('generateBtn');
 const result = document.getElementById('result');
 const copyBtn = document.getElementById('copyBtn');
@@ -14,7 +14,7 @@ copyBtn.onclick = function() {
     document.execCommand('Copy');
 }
 
-// Generator functions
+// Random character functions
 
 function getRandomNumber() {
     let number = Math.floor(Math.random() * 10);
@@ -41,16 +41,16 @@ function getRandomSpecial() {
 
 function getRandomCharacter() { 
     let items = [];
-    if (numbersOp.checked) {
+    if (numbersCheckbox.checked) {
         items += getRandomNumber();
     }
-    if (lowercaseOp.checked) {
+    if (lowercaseCheckbox.checked) {
         items += getRandomUppercase();
     }
-    if (uppercaseOp.checked) {
+    if (uppercaseCheckbox.checked) {
         items += getRandomLowercase();
     }
-    if (charactersOp.checked) {
+    if (charactersCheckbox.checked) {
         items += getRandomSpecial();
     }
     if (items.length === 0) {
@@ -60,15 +60,19 @@ function getRandomCharacter() {
     return item;
 }
 
+// Password function
+
 function generatePassword() {
     result.value = '';
-    const length = parseInt(lengthOp.value);
+    const length = parseInt(lengthInput.value);
     var password = '';
     for (var i = 0; i < length; i++) {
         password += getRandomCharacter();
     }
     result.value = password;
 }
+
+// Generate button event listener
 
 generateBtn.addEventListener('click', () => {
     generatePassword();
