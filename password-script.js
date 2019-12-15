@@ -19,32 +19,32 @@ const symbols = "@%+\/'!#$^?:,({[)}]~-_.";
 // Function to generate a random character from character strings
 
 function getRandomCharacter(type) {
-    let items = type;
-    let item = items[(Math.floor(Math.random() * items.length))];
-    return item;
+    let characters = type;
+    let character = characters[(Math.floor(Math.random() * characters.length))];
+    return character;
 }
 
 // Function to add a character to the password based on user's selected options
 
 function addPasswordCharacter() { 
-    let items = [];
+    let options = [];
     if (numbersCheckbox.checked) {
-        items += getRandomCharacter(numbers);
+        options += getRandomCharacter(numbers);
     }
     if (uppercaseCheckbox.checked) {
-        items += getRandomCharacter(uppercaseLetters);
+        options += getRandomCharacter(uppercaseLetters);
     }
     if (lowercaseCheckbox.checked) {
-        items += getRandomCharacter(lowercaseLetters);
+        options += getRandomCharacter(lowercaseLetters);
     }
     if (charactersCheckbox.checked) {
-        items += getRandomCharacter(symbols);
+        options += getRandomCharacter(symbols);
     }
-    if (items.length === 0) {
+    if (options.length === 0) {
         return '';
     }
-    let item = items[(Math.floor(Math.random() * items.length))];
-    return item;
+    let passwordCharacter = options[(Math.floor(Math.random() * options.length))];
+    return passwordCharacter;
 }
 
 // Function to generate password and set password to result value
