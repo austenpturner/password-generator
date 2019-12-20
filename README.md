@@ -18,4 +18,19 @@ After I could generate a random character from user-selected character options, 
 
 I added an event listener to the "generate password" button, so a password would be generated and a result printed to the screen when the user clicked the button. Last, I added a button that would copy the password to the user's clipboard. 
 
+## The Outcome
+Initial state of password generator when opened in browser:
 
+![Password Initial Screenshot](https://github.com/austenpturner/password-generator/blob/master/images/pw-initial.jpg)
+
+When user clicks "Generate Password" button with out changing any options:
+
+![Password Generated Screenshot](https://github.com/austenpturner/password-generator/blob/master/images/pw-generated.jpg)
+
+Password generated after user changes password options: 
+
+![Password Displaying Options Screenhot](https://github.com/austenpturner/password-generator/blob/master/images/pw-selected-op.jpg)
+![Password With Other Options Screenshot](https://github.com/austenpturner/password-generator/blob/master/images/pw-other-ops.jpg)
+
+## Thanks for reading! :smile:
+Please contact me with any questions or comments.
