@@ -32,5 +32,7 @@ Password generated after user changes password options:
 ![Password Displaying Options Screenhot](https://github.com/austenpturner/password-generator/blob/master/images/pw-selected-op.jpg)
 ![Password With Other Options Screenshot](https://github.com/austenpturner/password-generator/blob/master/images/pw-other-ops.jpg)
 
+Link to deployed site: https://austenpturner.github.io/password-generator/
+
 ## Thanks for reading! :smile:
-Please contact me with any questions or comments.
+Please contact me with any questions or comments: austenpturner@msn.com
